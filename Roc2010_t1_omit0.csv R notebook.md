@@ -139,7 +139,7 @@ lines(pred$net.result,col="red")
 
 
 ```R
-#將漲跌幅回推成黃金歷史牌價，紅色為訓練資料，黑色為預測資料
+#將漲跌幅回推成黃金歷史牌價，黑色為訓練資料，紅色為預測資料
 init_GP<-1113
 
 for( i in c(1:length(pred$net.result)))
@@ -161,8 +161,8 @@ for( i in c(1:length(dat$Gt)))
   else
     train_GP= c(train_GP,train_GP[i-1]+train_GP[i-1]*(dat$Gt[i]/100))    
 }
-plot(pred_GP,ylim=c(min(min(pred_GP),min(train_GP)),max(max(pred_GP),max(train_GP))),type="l")
-lines(train_GP,col="red")
+plot(pred_GP,ylim=c(min(min(pred_GP),min(train_GP)),max(max(pred_GP),max(train_GP))),type="l",col="red")
+lines(train_GP)
 ```
 
 
